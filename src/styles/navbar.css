@@ -1,0 +1,70 @@
+/* Navbar */
+.navbar {
+    background-color: #252836; /* Color de fondo del Navbar */
+  }
+  
+  /* Navbar Brand */
+  .navbar-brand {
+    color: #252836;
+  }
+  /* Form Input */
+  .form-control {
+    background-color: #82859a; /* Color de fondo del campo de entrada de búsqueda */
+    color: #343030; /* Color del texto del campo de entrada de búsqueda */
+    border: none; /* Borde del campo de entrada de búsqueda */
+    width: 600px;
+  }
+  /* Form Input en estado :focus */
+.form-control:focus {
+    background-color: #82859a; /* Color de fondo cuando el campo de entrada está enfocado (gris) */
+    color: #fff; /* Color del texto en estado :focus */
+    border: none; /* Borde del campo de entrada en estado :focus */
+    width: 600px;
+  }
+  
+  /* Form Button */
+  .btn-outline-success {
+    color: #fff; /* Color del texto del botón de búsqueda */
+    border-color: #d6d8e0; /* Color del borde del botón de búsqueda */
+  }
+  
+  /* Form Button Hover */
+  .btn-outline-success:hover {
+    background-color: #82859a; /* Color de fondo al pasar el mouse sobre el botón de búsqueda */
+    color: #252736; /* Color del texto al pasar el mouse sobre el botón de búsqueda */
+  }
+  .home{
+    color: #fff;
+    font-size: 1.8rem;
+  }
+  .user-name{
+    color: #fff;
+    font-size: 20px;
+    padding-left: 1.5%;
+  }
+  /* Estilos para el avatar */
+.avatar-container {
+    position: relative;
+    width: 40px; /* Ancho del avatar */
+    height: 40px; /* Altura del avatar */
+    border-radius: 50%; /* Hace que el avatar sea circular */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que desborde el círculo */
+}
+
+.avatar {
+    width: 100%; /* Ajusta la imagen al tamaño del contenedor circular */
+    height: 100%; /* Ajusta la imagen al tamaño del contenedor circular */
+    object-fit: cover; /* Escala y corta la imagen para que encaje en el contenedor circular */
+}
+.dropdown{
+    color: grey;
+    font-size: 35px;
+    padding-top: 5px;
+}
+.bibell{
+    color: white;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+  
