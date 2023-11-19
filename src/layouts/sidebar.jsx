@@ -13,7 +13,7 @@ const Sidebar = () => {
 
             {/* MENU */}
             <h2 className='text-white menu'>Menú</h2>
-            <ul className="nav flex-column align-items-start px-3 py-2">
+            <ul className="nav flex-column align-items-start py-2">
 
                 <li className="nav-item">
                     <a className="nav-link text-white" href="#">
@@ -51,7 +51,7 @@ const Sidebar = () => {
 
             {/* CATEGORIA */}
             <h2 className='text-white menu'>Categoria</h2>
-            <ul className="nav flex-column align-items-start px-3 py-2">
+            <ul className="nav flex-column align-items-start py-3">
 
                 <li className="nav-item">
                     <a className="nav-link text-white" href="#">

@@ -7,12 +7,12 @@
   background-color: #3f3652;
   height: 100%;
   border-radius: 20px;
-  margin-top: 43%;
+  margin-top: 150px;
 }
 
 .menu {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 40px;
   font-family: "sidebarFont";
   font-size: 35px;
 }
@@ -39,7 +39,7 @@
 }
 
 .hr {
+  margin-top: 40px;
   color: white;
   opacity: 0.5;
-
 }

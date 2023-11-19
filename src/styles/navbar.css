@@ -10,6 +10,7 @@
   left: 0;
   width: 100%;
   z-index: 1000;
+  padding-right: 50px;
 }
 
 /* HOME */
@@ -19,7 +20,8 @@
 }
 
 .tituloPagina {
-  margin-left: 10px;
+  margin-left: 15px;
+  margin-top: 5px;
   font-family: "tituloPag";
 }
 
@@ -29,12 +31,12 @@
 }
 
 .botonHome:hover {
-  color: #82859a;
+  color: #ff7551;
 }
 
 /* BUSCADOR */
 .buscador {
-  width: 40%;
+  width: 600px;
 }
 
 /* AVATAR */

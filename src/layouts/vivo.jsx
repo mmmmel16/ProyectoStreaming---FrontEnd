@@ -1,4 +1,4 @@
-
+import '../styles/vivo.css';
 import { Card} from 'react-bootstrap';
 import imgCard from '../img/pelota.jpeg';
 import { ImFeed } from "react-icons/im";

@@ -1,31 +1,61 @@
-.form-signin {
-  max-width: 530px;
-  padding: 2%;
-  border: 2px solid transparent;
-  /* Agrega un borde transparente alrededor del formulario */
-  transition: border-color 0.3s ease;
-  /* Agrega una transición para el cambio de color del borde */
+
+
+/* Borde del formulario con mouse */
+.fila:hover {
+  border: 2px solid #ff7551;
+  border-radius:  20px 20px;
 }
 
-.form-signin:hover {
-  border-color: #007bff;
-  /* Cambia el color del borde al pasar el cursor sobre el formulario */
+/* PRIMERA PARTE*/
+.containerImagen{
+  background-color: white;
+  border-radius: 20px 0 0 20px;
 }
 
-.form-signin .form-floating:focus-within {
-  z-index: 5;
+/* Imagen */
+#pelota {
+  position: absolute;
+  animation: rebota 1s alternate infinite ease-out;
 }
 
-.form-signin input[type="text"],
-.form-signin input[type="password"] {
+@-webkit-keyframes rebota {
+  0% {
+    top: 600px;
+    height: 50px;
+  }
+  10% {
+    top: 560px;
+    height: 100px;
+  }
+  100% {
+    top: 200px;
+    height: 100px;
+  }
+}
+
+/* SEGUNDA PARTE */
+.containerFormulario{
+  background-color: #3f3652;
+  border-radius:  0 20px 20px 0;
+}
+
+/* Formulario */
+.formContainer{
+  padding: 8% 10%;
+}
+
+.logoLogin{
+  width: 30%;
+  height: 30%;
+}
+
+.botonEnviar{
+  height: 5%;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.linea input[type="text"], .linea input[type="password"] {
   width: 100%;
-  box-sizing: border-box;
-  background-color: #fff;
-  /* Fondo blanco */
-  color: #000;
-  /* Texto negro */
-  border: 1px solid #ccc;
-  /* Borde gris */
   padding: 10px;
-  /* Espacio interior para mayor comodidad */
 }

@@ -1,11 +1,15 @@
 @font-face {
     font-family: "subtituloFont";
     src: url(/src/styles/fonts/KdamThmorPro-Regular.ttf);
+}
 
+@font-face {
     font-family: "titulosCard";
     src: url(/src/styles/fonts/Poppins-SemiBold.ttf);
+}
 
-    font: "subtituloCard";
+@font-face {
+    font-family: "subtituloCard";
     src: url(/src/styles/fonts/Poppins-Regular.ttf);
 }
 
@@ -14,14 +18,15 @@
     height: 100%;
     border-radius: 20px;
     padding: 30px;
-    margin-top: 8%;
+    margin-top: 150px;
 }
 
 .subtitulo {
-    color: white;
     font-family: "subtituloFont";
+    color: white;
     padding: 0 20px;
-    padding-bottom: 5px;
+    margin-bottom: 20px;
+    margin-left: 10px;
 }
 
 /* PRIMERA ROW*/
@@ -40,43 +45,43 @@
     width: 100%;
     height: 100%;
     border-radius: 20px;
-    background: linear-gradient(to right, rgba(255, 117, 81, 1), rgba(0, 0, 0, .5) 70%);
+    background: linear-gradient(to right, rgba(255, 117, 81, 1), rgba(0, 0, 0, .5) 50%);
     z-index: 1;
 }
 
 .textoOverlay1 {
     font-family: "titulosCard";
     position: absolute;
-    top: 7%;
-    left: 5%;
+    top: 20px;
+    left: 35px;
     color: white;
     font-weight: bold;
     z-index: 2;
 }
 
 .textoOverlay2 {
-    font-family: "titulosCard";
+    font-family: "subtituloCard";
     position: absolute;
-    top: 20%;
-    left: 5%;
+    top: 65px;
+    left: 50px;
     color: white;
     z-index: 2;
 }
 
 .textoOverlay3 {
-    font-family: "titulosCard";
+    font-family: "subtituloCard";
     position: absolute;
-    top: 30%;
-    left: 20%;
+    top: 105px;
+    left: 160px;
     color: white;
     z-index: 2;
 }
 
 .textoOverlay4 {
-    font-family: "titulosCard";
+    font-family: "subtituloCard";
     position: absolute;
-    top: 40%;
-    left: 5%;
+    top: 145px;
+    left: 50px;
     color: white;
     z-index: 2;
 }
@@ -84,8 +89,8 @@
 /* PERFIL */
 .perfil-container {
     position: absolute;
-    top: 60%;
-    left: 5%;
+    top: 195px;
+    left: 35px;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -102,8 +107,8 @@
 .partido-name {
     font-family: "titulosCard";
     position: absolute;
-    top: 63%;
-    left: 18%;
+    top: 200px;
+    left: 115px;
     color: white;
     z-index: 2;
 }
@@ -111,8 +116,9 @@
 .deporte-name {
     font-family: "subtituloCard";
     position: absolute;
-    top: 68%;
-    left: 18%;
+    top: 225px;
+    left: 115px;
+    margin-top: 5px;
     font-size: 15px;
     color: white;
     z-index: 2;
@@ -122,11 +128,10 @@
 .bodyCard {
     align-items: center;
 }
-
 .styleCard {
+    margin-right: -15px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    border: 3px solid #82859a;
 }

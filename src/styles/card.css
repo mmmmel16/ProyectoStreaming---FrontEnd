@@ -1,7 +1,6 @@
     .card-container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
     }
 
     .card {
@@ -33,7 +32,7 @@
         font-size: 14px;
     }
 
-    .btn-primary {
+    .btn-secondary {
         font-size: 14px;
     }
 
@@ -79,7 +78,6 @@
     /* Estilo para el pie de la modal */
     .custom-modal .modal-footer {
         background-color: #252836;
-        border-top: 1px solid #ffffff;
     }
 
     /* Estilo para los botones en el pie de la modal */

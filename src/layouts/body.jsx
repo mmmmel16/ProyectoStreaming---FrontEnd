@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Button, Modal } from 'react-bootstrap';
 import img from '../img/img2.jpg';
+import '../styles/body.css';
 import '../styles/card.css';
 import YouTube from 'react-youtube';
-import imgCard from '../img/pelota.jpeg'
-import '../styles/body.css';
 import imgPerfil from '../img/avatar1.png';
 
 const Body = ({ searchTerm }) => {
@@ -49,13 +48,11 @@ const Body = ({ searchTerm }) => {
         setShowModal(false);
     };
     return (
-        <div className="container-fluid fondo text-center text-white">
+        <div className="container-fluid fondo">
+            {/*PARTE PRINCIPAL*/}
             <div className="row">
-                <div className='subtitulo'><h2>Próximos</h2></div>
+                <h1 className='subtitulo'>Próximos</h1>
                 <div className="col-sm-6">
-                    {/*<div>
-                        <img src={img} alt="" style={{ width: '100%', height: '50vh', objectFit: 'fill', borderRadius: 10 }} />
-                    </div>*/}
                     <div className="position-relative">
                         <img src={img} alt="" className='imagenPrincipal' />
                         <div className='degradado'></div>
@@ -73,9 +70,6 @@ const Body = ({ searchTerm }) => {
                     </div>
                 </div>
                 <div className="col-sm-6">
-                    {/*<div>
-                        <img src={img} alt="" style={{ width: '100%', height: '50vh', borderRadius: 10 }} />
-                </div>*/}
                     <div className="position-relative">
                         <img src={img} alt="" className='imagenPrincipal' />
                         <div className='degradado'></div>
@@ -93,16 +87,17 @@ const Body = ({ searchTerm }) => {
                     </div>
                 </div>
             </div>
+
+            {/* PARTE CARDS */}
             <div className="row d-flex flex-wrap">
-                <h3 className='subtitulo mt-5'>Más adelante</h3>
-                {/*<div className='div1 mt-3'><h4>Más adelante</h4></div>*/}
+                <h3 className='subtitulo mt-5 mb-1'>Más adelante</h3>
 
                 {/* Mapea sobre los eventos y crea una tarjeta para cada uno */}
                 {eventos.map((evento, index) => (
                     <div key={evento.id_evento} className={`col-md-3 ${hoveredIndex === index ? 'hovered' : ''}`} onClick={() => handleCardClick(evento)}
                         onMouseEnter={() => handleCardHover(index)}
                         onMouseLeave={handleCardLeave}>
-                        <Card className='styleCard'>
+                        <Card className='styleCard bg-white'>
                             {/* Usa la imagen del evento o una imagen predeterminada */}
                             <Card.Img variant="top" src={evento.img_evento || 'ruta_de_imagen_predeterminada.jpg'} />
                             <Card.Body>
@@ -114,7 +109,7 @@ const Body = ({ searchTerm }) => {
                                     <br />
                                     Lugar del Evento: {evento.lugar_evento}
                                 </Card.Text>
-                                <Button variant="primary" href={`/detalle_evento/${evento.id_evento}`}>
+                                <Button variant="secondary" href={`/detalle_evento/${evento.id_evento}`}>
                                     Ver detalles
                                 </Button>
                             </Card.Body>
@@ -122,6 +117,7 @@ const Body = ({ searchTerm }) => {
                     </div>
                 ))}
             </div>
+
             {/* Modal de pantalla completa */}
             <Modal show={showModal} onHide={handleCloseModal} fullscreen className="custom-modal">
                 <Modal.Header closeButton>

@@ -21,7 +21,10 @@ function App() {
     <div className="App container-fluid">
       {loggedIn ? (
         <>
-          <Navbar onSearch={handleSearch} />
+          <header>
+            <Navbar onSearch={handleSearch} />
+          </header>
+          
           <div className="container-fluid">
             <div className="row">
               <div className="col-md-2">
