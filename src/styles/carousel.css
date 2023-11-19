@@ -53,6 +53,20 @@
     font-weight: bold;
 }
 
-.proximos {
-    color: aliceblue;
+.div1 {
+    text-align: left;
+    margin-left: 11%;
+}
+
+.main-content {
+    padding-right: 0;
+}
+
+.imgPrinc {
+    width: 50%;
+}
+
+.dropdown {
+    background-color: transparent;
+
 }

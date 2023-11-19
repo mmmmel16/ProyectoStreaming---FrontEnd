@@ -1,0 +1,88 @@
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .card {
+        flex-basis: calc(25% - 20px);
+        /* 25% para mostrar 4 tarjetas por fila, restando 20px de margen */
+        margin: 10px;
+        transition: transform 0.3s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .card.hovered {
+        transform: translateY(-10px);
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .card-text {
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        font-size: 14px;
+    }
+
+    /* Media query para pantallas más pequeñas */
+    @media (max-width: 768px) {
+        .card {
+            flex-basis: calc(50% - 20px);
+            /* 50% para mostrar 2 tarjetas por fila en pantallas más pequeñas */
+        }
+    }
+
+    /* styles.css */
+
+    /* Clase personalizada para la modal */
+    .custom-modal {
+        background-color: #252836;
+        color: #ebdfdf;
+    }
+
+    /* Estilo para el botón de cerrar en la modal */
+    .custom-modal .modal-header button.close {
+        background-color: #d8dae1;
+        color: #e2dada;
+    }
+
+    .custom-modal .modal-header {
+        background-color: #252836;
+        color: #e9e9e9;
+    }
+
+    /* Estilo para el título de la modal */
+    .custom-modal .modal-title {
+        background-color: #252836;
+        color: #dad8d8;
+    }
+
+    /* Estilo para el cuerpo de la modal */
+    .custom-modal .modal-body {
+        background-color: #252836;
+        color: #000000;
+    }
+
+    /* Estilo para el pie de la modal */
+    .custom-modal .modal-footer {
+        background-color: #252836;
+        border-top: 1px solid #ffffff;
+    }
+
+    /* Estilo para los botones en el pie de la modal */
+    .custom-modal .modal-footer button {
+        color: #f8f8f8;
+    }

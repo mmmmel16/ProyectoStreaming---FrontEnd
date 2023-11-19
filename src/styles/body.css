@@ -1,0 +1,132 @@
+@font-face {
+    font-family: "subtituloFont";
+    src: url(/src/styles/fonts/KdamThmorPro-Regular.ttf);
+
+    font-family: "titulosCard";
+    src: url(/src/styles/fonts/Poppins-SemiBold.ttf);
+
+    font: "subtituloCard";
+    src: url(/src/styles/fonts/Poppins-Regular.ttf);
+}
+
+.fondo {
+    background-color: #3f3652;
+    height: 100%;
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 8%;
+}
+
+.subtitulo {
+    color: white;
+    font-family: "subtituloFont";
+    padding: 0 20px;
+    padding-bottom: 5px;
+}
+
+/* PRIMERA ROW*/
+.imagenPrincipal {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.degradado {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(to right, rgba(255, 117, 81, 1), rgba(0, 0, 0, .5) 70%);
+    z-index: 1;
+}
+
+.textoOverlay1 {
+    font-family: "titulosCard";
+    position: absolute;
+    top: 7%;
+    left: 5%;
+    color: white;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.textoOverlay2 {
+    font-family: "titulosCard";
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    color: white;
+    z-index: 2;
+}
+
+.textoOverlay3 {
+    font-family: "titulosCard";
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    color: white;
+    z-index: 2;
+}
+
+.textoOverlay4 {
+    font-family: "titulosCard";
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    color: white;
+    z-index: 2;
+}
+
+/* PERFIL */
+.perfil-container {
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.perfil {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.partido-name {
+    font-family: "titulosCard";
+    position: absolute;
+    top: 63%;
+    left: 18%;
+    color: white;
+    z-index: 2;
+}
+
+.deporte-name {
+    font-family: "subtituloCard";
+    position: absolute;
+    top: 68%;
+    left: 18%;
+    font-size: 15px;
+    color: white;
+    z-index: 2;
+}
+
+/* SEGUNDA ROW */
+.bodyCard {
+    align-items: center;
+}
+
+.styleCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 3px solid #82859a;
+}

@@ -1,4 +1,3 @@
-import React from 'react';
 import '../styles/sidebar.css';
 import { SlActionRedo } from 'react-icons/sl';
 import { ImFeed } from "react-icons/im";
@@ -7,75 +6,84 @@ import { BiBookmark } from "react-icons/bi";
 import { BsKanban } from "react-icons/bs";
 
 
-
 const Sidebar = () => {
-    return (
-        <div id="sidebar" className="custom-bg-color">
-            <div className="logo-container">
-                <button className='btn'><div className="logo">Pico Deportes</div></button>
-            </div>
-            <div className="position-sticky" style={{ paddingTop: '100px' }}>
-                <ul className="nav flex-column  align-items-center">
-                    <h4 className='text-white'>Menu</h4>
-                    <li className="nav-item">
-                        <a className="nav-link active text-white" href="#">
-                            <SlActionRedo /> Proximos
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link text-white" href="#">
-                            <ImFeed />  En vivo
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link text-white" href="#">
-                            <BiCaretRightSquare /> Pasados
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link text-white" href="#">
-                            <BiBookmark />Guardados
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link text-white" href="#">
-                            <BsKanban /> Resultados
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div><hr className='text-white' /></div>
-            <div className="position-sticky">
-                <ul className="nav flex-column  align-items-center">
-                    <h4 className='text-white'>Categoria</h4>
-                    <li className="nav-item">
-                        <a className="nav-link active text-white" href="#">
-                            Proximos
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link text-white" href="#">
-                            <i className="bi bi-broadcast">En vivo</i>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link text-white" href="#">
-                            Pasados
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link text-white" href="#">
-                            Guardados
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link text-white" href="#">
-                            Resultados
-                        </a>
-                    </li>
-                </ul>
-            </div>
 
+    return (
+        <div id="sidebar" className="contenedorSide">
+
+            {/* MENU */}
+            <h2 className='text-white menu'>Menú</h2>
+            <ul className="nav flex-column align-items-start px-3 py-2">
+
+                <li className="nav-item">
+                    <a className="nav-link text-white" href="#">
+                        <div className="contenedorIcon"><SlActionRedo /></div>
+                        <span className="icon">Próximos</span>
+                    </a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link text-white" href="/vivo">
+                        <div className="contenedorIcon"><ImFeed /></div>
+                        <span className="icon">En vivo</span>
+                    </a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link text-white" href="#">
+                        <div className="contenedorIcon"><BiCaretRightSquare /></div>
+                        <span className="icon">Pasados</span>
+                    </a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link text-white" href="#">
+                        <div className="contenedorIcon"><BiBookmark /></div>
+                        <span className="icon">Guardados</span>
+                    </a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link text-white" href="#">
+                        <div className="contenedorIcon"><BsKanban /></div>
+                        <span className="icon">Resultados</span>
+                    </a>
+                </li>
+            </ul>
+
+            <hr className='hr' />
+
+            {/* CATEGORIA */}
+            <h2 className='text-white menu'>Categoria</h2>
+            <ul className="nav flex-column align-items-start px-3 py-2">
+
+                <li className="nav-item">
+                    <a className="nav-link text-white" href="#">
+                        <div className="contenedorIcon"><BsKanban /></div>
+                        <span className="icon">Fubol</span>
+                    </a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link text-white" href="#">
+                        <div className="contenedorIcon"><BsKanban /></div>
+                        <span className="icon">Basquet</span>
+                    </a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link text-white" href="#">
+                        <div className="contenedorIcon"><BsKanban /></div>
+                        <span className="icon">Cesto</span>
+                    </a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link text-white" href="#">
+                        <div className="contenedorIcon"><BsKanban /></div>
+                        <span className="icon">Running</span>
+                    </a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link text-white" href="#">
+                        <div className="contenedorIcon"><BsKanban /></div>
+                        <span className="icon">Tenis</span>
+                    </a>
+                </li>
+            </ul>
         </div>
 
     );
