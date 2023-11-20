@@ -100,7 +100,6 @@ const Login = ({ onLogin }) => {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Nombre de usuario"
                     value={usuario}
                     onChange={(e) => setUsuario(e.target.value)}
                   />
@@ -110,7 +109,6 @@ const Login = ({ onLogin }) => {
                   <input
                     type="password"
                     className="form-control"
-                    placeholder="Contraseña"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />

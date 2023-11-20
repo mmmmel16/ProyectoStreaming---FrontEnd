@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Navbar from './navbar';
 import Sidebar from './sidebar';
 import Body from './body';
+import Footer from './footer';
 
 const Home = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -12,17 +13,22 @@ const Home = () => {
 
     return(
         <>
-            <Navbar onSearch={handleSearch} />
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-md-2">
-                      <Sidebar />
-                    </div>
-                    <div className="col-md-10">
-                      <Body searchTerm={searchTerm} />
-                    </div>
-                </div>
+          <div className="container-fluid">
+            <div className='row'>
+              <Navbar onSearch={handleSearch} />
             </div>
+            <div className="row">
+              <div className="col-md-3">
+                <Sidebar />
+              </div>
+              <div className="col-md-9">
+                <Body searchTerm={searchTerm} />
+              </div>
+            </div>
+          </div>
+          <div className='row'>
+            <Footer/>
+          </div>
         </>
     )
 }

@@ -1,0 +1,41 @@
+footer {
+    background-color: #ff7551;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-media{
+    margin-left: 1%;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-left: 10%;
+}
+
+.copyright{
+    color: white;
+    margin-top: 1%;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.back-to-top button {
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-color: #3f3652;
+}
+
+.iconVolver{
+    
+}

@@ -1,15 +1,18 @@
 .fondoEstudio{
     background-color: #3f3652;
-    height: 100%;
-    width: 100%;
     border-radius: 20px;
-    margin-top: 3%;
+    margin-top: 10%;
+}
+
+.sideBarAdmin{
+    background-color: #ff7551;
+    border-radius: 20px 0 0 20px;
 }
 
 .textoPanel{
     color: white;
     padding-top: 2%;
-    padding-left: 1%;
+    padding-left: 2%;
 }
 
 .cardContenedor{
@@ -38,4 +41,73 @@
     padding: 0px 5px;
     padding-bottom: 4px;
     border-radius: 10px;
+}
+
+.tituloPublica{
+    font-size: 15px;
+}
+
+
+/* AVATAR */
+.containerAvatarStudio {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 10% auto 0;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.avatarStudio {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.usuarioStudio {
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.contenedorAvatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
+.contenedorIconStudio{
+    background-color: #3f3652;
+    border-radius: 20px;
+    padding-top: 1px;
+    padding-left: 12px;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.iconStudio{
+    font-size: 15px;
+    vertical-align: middle;
+    font-size: 15px;
+}
+
+.navStudio{
+    margin-left: -5px;
+    margin-bottom: 20px;
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding-left: 0;
+}
+
+.linkStudio{
+    margin: 10px;
+
 }

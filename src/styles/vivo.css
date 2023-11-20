@@ -1,10 +1,14 @@
 .fondoVivo{
     background-color: #3f3652;
-    height: 100%;
+    margin-top: 10%;
     border-radius: 20px;
 }
 
 /* FILA 1*/
+.contenedorPrimeraFila{
+    margin-top: 2%;
+}
+
 .contenedorIconVivo{
     background-color: #ff7551;
     border-radius: 40px;
@@ -13,13 +17,12 @@
     padding-left: 15px;
     font-size: 40px; 
     color: white;
-    margin-left: 40px;
+    margin-left: 30px;
 }
 
 .textoVivo{
-    padding-top: 3px;
     color: white;
-    font-size: 50px;
+    font-size: 45px;
 }
 
 /* FILA 2*/
@@ -31,14 +34,7 @@
 /* FILA 3*/
 .filaCard3{
     padding: 0 30px;
-    margin-top: 40px;
-}
-
-/* FILA 4*/
-.filaCard4{
-    padding: 0 30px;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    margin-top: 20px;
 }
 
 /*STYLE CARDS*/
@@ -93,19 +89,23 @@
 .tituloCard{
     color: white;
     font-weight: 500px;
+    font-size: 15px;
 }
 
 .nombrePerfil{
-    font-size: 19px;
+    font-size: 13px;
     color: white;
 }
 
 .perfilesViendo{
     margin-top: -10px;
-    font-size: 15px;
+    font-size: 10px;
     color: white;
 }
 
 .descripcionCard{
     margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }

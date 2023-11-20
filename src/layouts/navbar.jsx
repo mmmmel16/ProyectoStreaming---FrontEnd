@@ -6,6 +6,7 @@ import { Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import logo from '../img/pico-deportes-1.png';
+import {FaSignOutAlt, FaCog, FaEdit, FaChartBar } from 'react-icons/fa';
 
 const NavbarExample = ({ onSearch }) => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -55,9 +56,10 @@ const NavbarExample = ({ onSearch }) => {
                 <Dropdown>
                     <Dropdown.Toggle id="profileButton" as="button" className="btn btn-transparent text-white"></Dropdown.Toggle>
                     <Dropdown.Menu>
-                        <Dropdown.Item className="text-white" href="#/action-1">Editar perfil</Dropdown.Item>
-                        <Dropdown.Item className="text-white" href="/studio">Mi estudio</Dropdown.Item>
-                        <Dropdown.Item className="text-white" href="#/action-3">Configuración</Dropdown.Item>
+                        <Dropdown.Item className="text-white" href="#/action-1"><FaEdit /> Editar perfil</Dropdown.Item>
+                        <Dropdown.Item className="text-white" href="/studio"><FaChartBar /> Mi estudio</Dropdown.Item>
+                        <Dropdown.Item className="text-white" href="#/action-3"><FaCog /> Configuración</Dropdown.Item>
+                        <Dropdown.Item className="text-white" href="/"><FaSignOutAlt /> Cerrar sesión</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
             </nav>

@@ -4,6 +4,7 @@ import Login from './authentication/login';
 import Navbar from './layouts/navbar';
 import Sidebar from './layouts/sidebar';
 import Body from './layouts/body';
+import Footer from './layouts/footer';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -18,14 +19,13 @@ function App() {
   };
 
   return (
-    <div className="App container-fluid">
+    <div className="container-fluid">
       {loggedIn ? (
         <>
-          <header>
-            <Navbar onSearch={handleSearch} />
-          </header>
-          
           <div className="container-fluid">
+            <div className='row'>
+              <Navbar onSearch={handleSearch} />
+            </div>
             <div className="row">
               <div className="col-md-3">
                 <Sidebar />
@@ -34,6 +34,9 @@ function App() {
                 <Body searchTerm={searchTerm} />
               </div>
             </div>
+          </div>
+          <div className='row'>
+            <Footer/>
           </div>
         </>
       ) : (

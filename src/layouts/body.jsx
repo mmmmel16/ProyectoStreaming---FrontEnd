@@ -48,7 +48,7 @@ const Body = ({ searchTerm }) => {
         setShowModal(false);
     };
     return (
-        <div className="container-fluid fondo">
+        <div className="fondo">
             {/*PARTE PRINCIPAL*/}
             <div className="row">
                 <h1 className='subtitulo'>Próximos</h1>
@@ -98,16 +98,14 @@ const Body = ({ searchTerm }) => {
                         onMouseEnter={() => handleCardHover(index)}
                         onMouseLeave={handleCardLeave}>
                         <Card className='styleCard bg-white'>
-                            {/* Usa la imagen del evento o una imagen predeterminada */}
+
                             <Card.Img variant="top" src={evento.img_evento || 'ruta_de_imagen_predeterminada.jpg'} />
                             <Card.Body>
                                 <Card.Title>{evento.nombre_evento}</Card.Title>
                                 <Card.Text>
-                                    Tipo de Deporte: {evento.tipo_deporte}
-                                    <br />
-                                    Fecha del Evento: {evento.fecha_evento}
-                                    <br />
-                                    Lugar del Evento: {evento.lugar_evento}
+                                    <p>{evento.tipo_deporte}</p>
+                                    <p>{evento.lugar_evento}</p>
+                                    <p>{evento.fecha_evento}</p>
                                 </Card.Text>
                                 <Button variant="secondary" href={`/detalle_evento/${evento.id_evento}`}>
                                     Ver detalles
@@ -124,7 +122,6 @@ const Body = ({ searchTerm }) => {
                     <Modal.Title className='text-white'>{selectedEvento && selectedEvento.nombre_evento}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    {/* Aquí puedes colocar el contenido de la modal, por ejemplo, detalles adicionales del evento */}
                     {selectedEvento && (
                         <>
                             {selectedEvento.url_transmision && (
