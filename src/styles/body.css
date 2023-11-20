@@ -64,6 +64,7 @@
     position: absolute;
     top: 65px;
     left: 50px;
+    font-size: 15px;
     color: white;
     z-index: 2;
 }
@@ -71,8 +72,9 @@
 .textoOverlay3 {
     font-family: "subtituloCard";
     position: absolute;
-    top: 105px;
-    left: 160px;
+    top: 90px;
+    left: 115px;
+    font-size: 15px;
     color: white;
     z-index: 2;
 }
@@ -80,8 +82,9 @@
 .textoOverlay4 {
     font-family: "subtituloCard";
     position: absolute;
-    top: 145px;
+    top: 115px;
     left: 50px;
+    font-size: 15px;
     color: white;
     z-index: 2;
 }
@@ -89,7 +92,7 @@
 /* PERFIL */
 .perfil-container {
     position: absolute;
-    top: 195px;
+    top: 160px;
     left: 35px;
     width: 60px;
     height: 60px;
@@ -107,7 +110,7 @@
 .partido-name {
     font-family: "titulosCard";
     position: absolute;
-    top: 200px;
+    top: 165px;
     left: 115px;
     color: white;
     z-index: 2;
@@ -116,7 +119,7 @@
 .deporte-name {
     font-family: "subtituloCard";
     position: absolute;
-    top: 225px;
+    top: 190px;
     left: 115px;
     margin-top: 5px;
     font-size: 15px;

@@ -57,10 +57,10 @@ const Body = ({ searchTerm }) => {
                         <img src={img} alt="" className='imagenPrincipal' />
                         <div className='degradado'></div>
                         <div className='degradado'></div>
-                        <h2 className='textoOverlay1'>Pre-Federal: </h2>
-                        <h3 className='textoOverlay2'>Independiente junior</h3>
-                        <h3 className='textoOverlay3'> vs </h3>
-                        <h3 className='textoOverlay4'>Cultural Argentino</h3>
+                        <h3 className='textoOverlay1'>Pre-Federal: </h3>
+                        <h4 className='textoOverlay2'>Independiente junior</h4>
+                        <h4 className='textoOverlay3'> vs </h4>
+                        <h4 className='textoOverlay4'>Cultural Argentino</h4>
 
                         <div className='perfil-container'>
                             <img src={imgPerfil} alt="Profile Avatar" className='perfil' />

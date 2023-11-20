@@ -27,10 +27,10 @@ function App() {
           
           <div className="container-fluid">
             <div className="row">
-              <div className="col-md-2">
+              <div className="col-md-3">
                 <Sidebar />
               </div>
-              <div className="col-md-10">
+              <div className="col-md-9">
                 <Body searchTerm={searchTerm} />
               </div>
             </div>

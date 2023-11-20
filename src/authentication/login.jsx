@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/sign_in.css';
 import logo from '../img/pico-deportes-1.png';
-import imgPelota from '../img/pelota.jpeg';
 
 const Login = ({ onLogin }) => {
   const [usuario, setUsuario] = useState('');
@@ -43,10 +42,51 @@ const Login = ({ onLogin }) => {
     }
   };
 
+  useEffect(() => {
+    let x = 0,
+      y = 0,
+      dirX = 1,
+      dirY = 1;
+    const speed = 5;
+    let dvd = document.getElementById("dvd");
+    const container = document.querySelector('.containerImagen');
+    const containerWidth = container.clientWidth;
+    const containerHeight = container.clientHeight;
+    const dvdWidth = dvd.clientWidth;
+    const dvdHeight = dvd.clientHeight;
+  
+    function animate() {
+      if (y + dvdHeight >= containerHeight || y < 0) {
+        dirY *= -1;
+      }
+      if (x + dvdWidth >= containerWidth || x < 0) {
+        if (x < 0) {
+          x = 0;
+          dirX *= -1;
+        }
+        if (x + dvdWidth >= containerWidth) {
+          x = containerWidth - dvdWidth;
+          dirX *= -1;
+        }
+      }
+      x += dirX * speed;
+      y += dirY * speed;
+      dvd.style.left = x + "px";
+      dvd.style.top = y + "px";
+      window.requestAnimationFrame(animate);
+    }
+  
+    window.requestAnimationFrame(animate);
+  }, []);
+
   return (
     <div className='row fila'>
         <div className='col-md-6 containerImagen'>
-          <img src="https://www.tenvinilo.com/vinilos-decorativos/img/preview/vinilo-infantil-pelota-futbol-color-1399.png" width="100" height="100" id="pelota"/>
+          <div id="dvd"></div>
+          <div className='position-relative'>
+            <div className='textoPrimero'>Tu comunidad, tus campeones, tu streaming:</div>
+            <div className='textoSegundo'>¡Vive el deporte local en cada pantalla!</div>
+          </div>
         </div>
 
         <div className='col-md-6 containerFormulario'>

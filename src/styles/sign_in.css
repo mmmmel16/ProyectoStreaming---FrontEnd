@@ -1,42 +1,53 @@
+@font-face {
+  font-family: "poppins";
+  src: url(../styles/fonts/Poppins-SemiBold.ttf);
+}
 
+@font-face {
+  font-family: "poppinsSimple";
+  src: url(../styles/fonts/Poppins-Regular.ttf);
+}
+
+.fila{
+  background: url(../img/arco.png) ;
+  border-radius:  20px;
+}
 
 /* Borde del formulario con mouse */
 .fila:hover {
   border: 2px solid #ff7551;
-  border-radius:  20px 20px;
+  border-radius:  20px;
 }
 
 /* PRIMERA PARTE*/
 .containerImagen{
-  background-color: white;
-  border-radius: 20px 0 0 20px;
+  background: url(../img/arco.png) ;
+  border-radius: 20px;
 }
 
-/* Imagen */
-#pelota {
+.textoPrimero{
   position: absolute;
-  animation: rebota 1s alternate infinite ease-out;
+  top: 470px;
+  left: 4%;
+  font-size: 25px;
+  font-family: "poppins";
+  color:#fff;
 }
 
-@-webkit-keyframes rebota {
-  0% {
-    top: 600px;
-    height: 50px;
-  }
-  10% {
-    top: 560px;
-    height: 100px;
-  }
-  100% {
-    top: 200px;
-    height: 100px;
-  }
+.textoSegundo{
+  position: absolute;
+  top: 520px;
+  left: 25%;
+  font-size: 15px;
+  font-family: "poppinsSimple";
+  color:#fff;
 }
 
 /* SEGUNDA PARTE */
 .containerFormulario{
   background-color: #3f3652;
-  border-radius:  0 20px 20px 0;
+  border-radius:  20px;
+  z-index: 1;
 }
 
 /* Formulario */
@@ -58,4 +69,18 @@
 .linea input[type="text"], .linea input[type="password"] {
   width: 100%;
   padding: 10px;
+}
+
+/* ANIMACIONES */
+#dvd {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100px;
+  width: 100px;
+  background-image: url("../img/pelotaFutbol.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 0;
 }
