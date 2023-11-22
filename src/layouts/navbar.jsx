@@ -27,25 +27,27 @@ const NavbarExample = ({ onSearch }) => {
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark contenedorNav">
 
-                <div className='container-fluid d-flex align-items-center justify-content-between'>
-                    {/* BOTON CON LOGO Y NOMBRE*/}
-                    <Button variant="link" href="/home" className="d-flex align-items-center botonHome">
-                        <img src={logo} alt="Mi Ícono" className="logo" />
-                        <h1 className='tituloPagina'>Pico Deportes</h1>
-                    </Button>
-    
-                    {/* HAMBURGUESA */}
-                    <button
-                      className="navbar-toggler"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#navbarSupportedContent"
-                      aria-controls="navbarSupportedContent"
-                      aria-expanded="false"
-                      aria-label="Toggle navigation"
-                    >
-                      <span className="navbar-toggler-icon"></span>
-                    </button>
+                <div className='container-fluid'>
+                    <div className='d-flex align-items-center'>
+                      {/* HAMBURGUESA */}
+                      <button
+                        className="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                      >
+                        <span className="navbar-toggler-icon"></span>
+                      </button>
+                      
+                      {/* BOTON CON LOGO Y NOMBRE*/}
+                      <Button variant="link" href="/home" className="navbar-brand d-flex align-items-center botonHome">
+                          <img src={logo} alt="Mi Ícono" className="logo me-2" />
+                          <h1 className='tituloPagina m-0'>Pico Deportes</h1>
+                      </Button>
+                    </div>
     
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         {/* BUSCADOR */}

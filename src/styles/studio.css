@@ -104,3 +104,16 @@
 .linkStudio{
     margin: 10px;
 }
+
+/* RESPONSIVE */
+@media (max-width: 576px) {
+    .fondoEstudio{
+        margin-top: 120px;
+    }
+    .sideBarAdmin{
+        border-radius: 20px;
+    }
+    .textoPanel{
+        margin-top: 20px;
+    }
+}

@@ -4,6 +4,7 @@ import { ImFeed } from "react-icons/im";
 import { BiCaretRightSquare } from "react-icons/bi";
 import { BiBookmark } from "react-icons/bi";
 import { BsKanban } from "react-icons/bs";
+import { IoMdFootball, IoIosBasketball, IoMdBasketball, IoIosWalk, IoIosTennisball } from 'react-icons/io';
 
 
 const Sidebar = () => {
@@ -58,31 +59,31 @@ const Sidebar = () => {
     
                     <li className="nav-item">
                         <a className="nav-link text-white d-flex align-items-center" href="#">
-                            <div className="contenedorIcon d-flex align-items-center justify-content-center me-2"><BsKanban /></div>
+                            <div className="contenedorIcon d-flex align-items-center justify-content-center me-2"><IoMdFootball /></div>
                             <span className="icon">Fubol</span>
                         </a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link text-white d-flex align-items-center" href="#">
-                            <div className="contenedorIcon d-flex align-items-center justify-content-center me-2"><BsKanban /></div>
+                            <div className="contenedorIcon d-flex align-items-center justify-content-center me-2"><IoIosBasketball /></div>
                             <span className="icon">Basquet</span>
                         </a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link text-white d-flex align-items-center" href="#">
-                            <div className="contenedorIcon d-flex align-items-center justify-content-center me-2"><BsKanban /></div>
+                            <div className="contenedorIcon d-flex align-items-center justify-content-center me-2"><IoMdBasketball /></div>
                             <span className="icon">Cesto</span>
                         </a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link text-white d-flex align-items-center" href="#">
-                            <div className="contenedorIcon d-flex align-items-center justify-content-center me-2"><BsKanban /></div>
+                            <div className="contenedorIcon d-flex align-items-center justify-content-center me-2"><IoIosWalk /></div>
                             <span className="icon">Running</span>
                         </a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link text-white d-flex align-items-center" href="#">
-                            <div className="contenedorIcon d-flex align-items-center justify-content-center me-2"><BsKanban /></div>
+                            <div className="contenedorIcon d-flex align-items-center justify-content-center me-2"><IoIosTennisball /></div>
                             <span className="icon">Tenis</span>
                         </a>
                     </li>

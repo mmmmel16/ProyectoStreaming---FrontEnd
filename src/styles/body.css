@@ -155,32 +155,32 @@
     }
 
     .textoOverlay2{
-        top: 50px;
+        top: 40px;
     }
 
     .textoOverlay3{
-        top: 70px;
+        top: 60px;
         left: 110px;
     }
 
     .textoOverlay4{
-        top: 90px;
+        top: 80px;
     }
 
     .perfil-container {
-        top: 120px;
+        top: 100px;
         left: 15px;
         width: 40px;
         height: 40px;
     }
 
     .partido-name {
-        top: 120px;
+        top: 105px;
         left: 70px;
     }
 
     .deporte-name {
-        top: 135px;
+        top: 120px;
         left: 70px;
     }
 

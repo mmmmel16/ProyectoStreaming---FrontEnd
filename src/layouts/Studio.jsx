@@ -4,14 +4,13 @@ import '../styles/studio.css';
 import { MdDelete } from 'react-icons/md';
 import React, { useState, useEffect } from 'react';
 import Navbar from './navbar';
-import { FaChartBar, FaPencilAlt } from 'react-icons/fa';
+import { FaChartBar, FaPencilAlt, FaUserPlus} from 'react-icons/fa';
 import Footer from './footer';
-import { SlActionRedo } from 'react-icons/sl';
-import { ImFeed } from "react-icons/im";
-import { BiCaretRightSquare, BiBookmark } from "react-icons/bi";
+import { BiCaretRightSquare } from "react-icons/bi";
 import imgAvatar from '../img/avatar1.jpg';
 import { BsKanban } from "react-icons/bs";
 import { AiOutlineUpload } from 'react-icons/ai';
+import { IoIosVideocam, IoMdCash } from 'react-icons/io';
 
 const Studio = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -194,31 +193,31 @@ const Studio = () => {
 
                             <li className="nav-item">
                                 <a className="nav-link linkStudio text-white d-flex align-items-center" href="#">
-                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><SlActionRedo /></div>
+                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><BiCaretRightSquare /></div>
                                     <span className="iconStudio">Mis directos</span>
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link linkStudio text-white d-flex align-items-center" href="#">
-                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><ImFeed /></div>
+                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><IoMdCash /></div>
                                     <span className="iconStudio">Monetización</span>
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link linkStudio text-white d-flex align-items-center" href="#">
-                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><BiCaretRightSquare /></div>
+                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><BsKanban /></div>
                                     <span className="iconStudio">Panel de análisis</span>
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link linkStudio text-white d-flex align-items-center" href="#">
-                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><BiBookmark /></div>
+                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><FaUserPlus /></div>
                                     <span className="iconStudio">Suscriptores</span>
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link linkStudio text-white d-flex align-items-center" href="#">
-                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><BsKanban /></div>
+                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><IoIosVideocam /></div>
                                     <span className="iconStudio">Transmitir en vivo</span>
                                 </a>
                             </li>

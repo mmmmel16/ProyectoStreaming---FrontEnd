@@ -42,7 +42,7 @@ const Vivo = () => {
 
                     <div>
                         {/* FILA 3*/}
-                        <div className="row d-flex flex-wrap filaCard3">
+                        <div className="row d-flex flex-wrap filaCard">
                             {/* Card 1 */}
                             <div className="col-md-3 position-relative">
                                 <Card className='styleCard'>
@@ -124,7 +124,7 @@ const Vivo = () => {
 
 
                         {/* FILA 4*/}
-                        <div className="row d-flex flex-wrap filaCard4">
+                        <div className="row d-flex flex-wrap filaCard">
                             {/* Card 5 */}
                             <div className="col-md-3 position-relative">
                                 <Card className='styleCard'>

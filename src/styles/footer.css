@@ -39,11 +39,12 @@ footer {
 /* RESPONSIVE */
 @media (max-width: 576px) {
     .copyright{
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .social-media{
-        font-size: 15px;
+        font-size: 12px;
+        margin-right: 15px;
     }
 
     .back-to-top button{
