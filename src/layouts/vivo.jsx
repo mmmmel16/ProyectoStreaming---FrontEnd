@@ -1,5 +1,5 @@
 import '../styles/vivo.css';
-import { Card} from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import imgCard from '../img/pelota.jpeg';
 import { ImFeed } from "react-icons/im";
 import imgPerfil from '../img/avatar1.png';
@@ -12,14 +12,14 @@ const Vivo = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleSearch = (term) => {
-      setSearchTerm(term);
+        setSearchTerm(term);
     };
 
     return (
         <>
             <div className="container-fluid">
                 <div className='row'>
-                  <Navbar onSearch={handleSearch} />
+                    <Navbar onSearch={handleSearch} />
                 </div>
 
                 <div className="row fondoVivo">
@@ -27,7 +27,7 @@ const Vivo = () => {
                         {/* FILA 1 */}
                         <div className='row contenedorPrimeraFila'>
                             <div className='col-md-1'>
-                                <div className="contenedorIconVivo"><ImFeed/></div> 
+                                <div className="contenedorIconVivo"><ImFeed /></div>
                             </div>
                             <div className='col-md-2 d-flex align-items-center px-4'>
                                 <h1 className='textoVivo'>En vivo</h1>
@@ -42,12 +42,12 @@ const Vivo = () => {
 
                     <div>
                         {/* FILA 3*/}
-                        <div className="row d-flex flex-wrap filaCard3">
+                        <div className="row d-flex flex-wrap filaCard">
                             {/* Card 1 */}
                             <div className="col-md-3 position-relative">
                                 <Card className='styleCard'>
-                                    <Card.Img variant="top" src={imgCard} className='imagenVivo'/>
-                                    <div className='vivoOverlay'> <ImFeed className='iconoVivo'/> EN VIVO</div>
+                                    <Card.Img variant="top" src={imgCard} className='imagenVivo' />
+                                    <div className='vivoOverlay'> <ImFeed className='iconoVivo' /> EN VIVO</div>
                                     <Card.Body className='bodyCard'>
                                         <div className='perfilCard'>
                                             <img src={imgPerfil} alt="Profile Avatar" className='imagenCard' />
@@ -65,8 +65,8 @@ const Vivo = () => {
                             {/* Card 2 */}
                             <div className="col-md-3 position-relative">
                                 <Card className='styleCard'>
-                                    <Card.Img variant="top" src={imgCard} className='imagenVivo'/>
-                                    <div className='vivoOverlay'> <ImFeed className='iconoVivo'/> EN VIVO</div>
+                                    <Card.Img variant="top" src={imgCard} className='imagenVivo' />
+                                    <div className='vivoOverlay'> <ImFeed className='iconoVivo' /> EN VIVO</div>
                                     <Card.Body className='bodyCard'>
                                         <div className='perfilCard'>
                                             <img src={imgPerfil} alt="Profile Avatar" className='imagenCard' />
@@ -84,8 +84,8 @@ const Vivo = () => {
                             {/* Card 3 */}
                             <div className="col-md-3 position-relative">
                                 <Card className='styleCard'>
-                                    <Card.Img variant="top" src={imgCard} className='imagenVivo'/>
-                                    <div className='vivoOverlay'> <ImFeed className='iconoVivo'/> EN VIVO</div>
+                                    <Card.Img variant="top" src={imgCard} className='imagenVivo' />
+                                    <div className='vivoOverlay'> <ImFeed className='iconoVivo' /> EN VIVO</div>
                                     <Card.Body className='bodyCard'>
                                         <div className='perfilCard'>
                                             <img src={imgPerfil} alt="Profile Avatar" className='imagenCard' />
@@ -103,8 +103,8 @@ const Vivo = () => {
                             {/* Card 4 */}
                             <div className="col-md-3 position-relative">
                                 <Card className='styleCard'>
-                                    <Card.Img variant="top" src={imgCard} className='imagenVivo'/>
-                                    <div className='vivoOverlay'> <ImFeed className='iconoVivo'/> EN VIVO</div>
+                                    <Card.Img variant="top" src={imgCard} className='imagenVivo' />
+                                    <div className='vivoOverlay'> <ImFeed className='iconoVivo' /> EN VIVO</div>
                                     <Card.Body className='bodyCard'>
                                         <div className='perfilCard'>
                                             <img src={imgPerfil} alt="Profile Avatar" className='imagenCard' />
@@ -124,12 +124,12 @@ const Vivo = () => {
 
 
                         {/* FILA 4*/}
-                        <div className="row d-flex flex-wrap filaCard4">
+                        <div className="row d-flex flex-wrap filaCard">
                             {/* Card 5 */}
                             <div className="col-md-3 position-relative">
                                 <Card className='styleCard'>
-                                    <Card.Img variant="top" src={imgCard} className='imagenVivo'/>
-                                    <div className='vivoOverlay'> <ImFeed className='iconoVivo'/> EN VIVO</div>
+                                    <Card.Img variant="top" src={imgCard} className='imagenVivo' />
+                                    <div className='vivoOverlay'> <ImFeed className='iconoVivo' /> EN VIVO</div>
                                     <Card.Body className='bodyCard'>
                                         <div className='perfilCard'>
                                             <img src={imgPerfil} alt="Profile Avatar" className='imagenCard' />
@@ -147,8 +147,8 @@ const Vivo = () => {
                             {/* Card 6 */}
                             <div className="col-md-3 position-relative">
                                 <Card className='styleCard'>
-                                    <Card.Img variant="top" src={imgCard} className='imagenVivo'/>
-                                    <div className='vivoOverlay'> <ImFeed className='iconoVivo'/> EN VIVO</div>
+                                    <Card.Img variant="top" src={imgCard} className='imagenVivo' />
+                                    <div className='vivoOverlay'> <ImFeed className='iconoVivo' /> EN VIVO</div>
                                     <Card.Body className='bodyCard'>
                                         <div className='perfilCard'>
                                             <img src={imgPerfil} alt="Profile Avatar" className='imagenCard' />
@@ -166,8 +166,8 @@ const Vivo = () => {
                             {/* Card 7 */}
                             <div className="col-md-3 position-relative">
                                 <Card className='styleCard'>
-                                    <Card.Img variant="top" src={imgCard} className='imagenVivo'/>
-                                    <div className='vivoOverlay'> <ImFeed className='iconoVivo'/> EN VIVO</div>
+                                    <Card.Img variant="top" src={imgCard} className='imagenVivo' />
+                                    <div className='vivoOverlay'> <ImFeed className='iconoVivo' /> EN VIVO</div>
                                     <Card.Body className='bodyCard'>
                                         <div className='perfilCard'>
                                             <img src={imgPerfil} alt="Profile Avatar" className='imagenCard' />
@@ -185,8 +185,8 @@ const Vivo = () => {
                             {/* Card 8 */}
                             <div className="col-md-3 position-relative">
                                 <Card className='styleCard'>
-                                    <Card.Img variant="top" src={imgCard} className='imagenVivo'/>
-                                    <div className='vivoOverlay'> <ImFeed className='iconoVivo'/> EN VIVO</div>
+                                    <Card.Img variant="top" src={imgCard} className='imagenVivo' />
+                                    <div className='vivoOverlay'> <ImFeed className='iconoVivo' /> EN VIVO</div>
                                     <Card.Body className='bodyCard'>
                                         <div className='perfilCard'>
                                             <img src={imgPerfil} alt="Profile Avatar" className='imagenCard' />
@@ -206,7 +206,7 @@ const Vivo = () => {
                 </div>
             </div>
             <div className='row'>
-                <Footer/>
+                <Footer />
             </div>
         </>
     );

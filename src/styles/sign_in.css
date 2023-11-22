@@ -8,65 +8,84 @@
   src: url(../styles/fonts/Poppins-Regular.ttf);
 }
 
-.fila{
-  background: url(../img/arco.png) ;
-  border-radius:  20px;
+.fila {
+  background: url(../img/arco.png);
+  border-radius: 30px;
 }
 
 /* Borde del formulario con mouse */
 .fila:hover {
   border: 2px solid #ff7551;
-  border-radius:  20px;
-}
-
-/* PRIMERA PARTE*/
-.containerImagen{
-  background: url(../img/arco.png) ;
   border-radius: 20px;
 }
 
-.textoPrimero{
+/* PRIMERA PARTE*/
+.containerImagen {
+  position: relative;
+  background: url(../img/arco.png);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.containerImagen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/arco.png);
+  z-index: -1;
+}
+
+.text-container {
   position: absolute;
   top: 470px;
   left: 4%;
   font-size: 25px;
-  font-family: "poppins";
-  color:#fff;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
 }
 
-.textoSegundo{
-  position: absolute;
-  top: 520px;
-  left: 25%;
+.textoPrimero {
+  font-size: 20px;
+  font-family: "poppins";
+  margin-bottom: 10px;
+}
+
+.textoSegundo {
   font-size: 15px;
   font-family: "poppinsSimple";
-  color:#fff;
 }
 
 /* SEGUNDA PARTE */
-.containerFormulario{
+.containerFormulario {
   background-color: #3f3652;
-  border-radius:  20px;
+  border-radius: 20px;
   z-index: 1;
 }
 
 /* Formulario */
-.formContainer{
+.formContainer {
   padding: 8% 10%;
 }
 
-.logoLogin{
+.logoLogin {
   width: 30%;
   height: 30%;
 }
 
-.botonEnviar{
+.botonEnviar {
   height: 5%;
   font-weight: bold;
   font-size: 20px;
 }
 
-.linea input[type="text"], .linea input[type="password"] {
+.linea input[type="text"],
+.linea input[type="password"] {
   width: 100%;
   padding: 10px;
 }

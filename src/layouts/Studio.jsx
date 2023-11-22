@@ -4,7 +4,6 @@ import '../styles/studio.css';
 import { MdDelete } from 'react-icons/md';
 import React, { useState, useEffect } from 'react';
 import Navbar from './navbar';
-import { FaChartBar, FaPencilAlt } from 'react-icons/fa';
 import Footer from './footer';
 import { SlActionRedo } from 'react-icons/sl';
 import { ImFeed } from "react-icons/im";
@@ -12,6 +11,9 @@ import { BiCaretRightSquare, BiBookmark } from "react-icons/bi";
 import imgAvatar from '../img/avatar1.jpg';
 import { BsKanban } from "react-icons/bs";
 import { AiOutlineUpload } from 'react-icons/ai';
+import agregarEvento from './agregarEvento';
+import { FaChartBar, FaPencilAlt, FaUserPlus } from 'react-icons/fa';
+import { IoIosVideocam, IoMdCash } from 'react-icons/io';
 
 const Studio = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -19,6 +21,7 @@ const Studio = () => {
     const [selectedEvento, setSelectedEvento] = useState(null);
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const [showModal, setShowModal] = useState(false);
+    const [eventToDelete, setEventToDelete] = useState(null);
 
     useEffect(() => {
         const fetchEventos = async () => {
@@ -81,11 +84,12 @@ const Studio = () => {
     };
 
     const openDeleteModal = (evento) => {
-        setSelectedEvento(evento);
+        setEventToDelete(evento);
         setShowDeleteModal(true);
     };
 
     const closeDeleteModal = () => {
+        setEventToDelete(null);
         setShowDeleteModal(false);
     };
 
@@ -99,59 +103,57 @@ const Studio = () => {
 
     const handleEditSubmit = (event) => {
         event.preventDefault();
-        // Lógica para guardar los valores editados
-        // ...
+
         closeEditModal(); // Cierra el modal después de guardar los cambios
     };
 
+    const [formData, setFormData] = useState({
+        nombre_evento: '',
+        tipo_deporte: '',
+        lugar_evento: '',
+        fecha_evento: '',
+        img_evento: '',
+        horario_evento: '',
+        url_transmision: '',
+    });
+
     const handleInputChange = (event) => {
         const { name, value } = event.target;
-        setEditedValues({
-            ...editedValues,
+        setFormData({
+            ...formData,
             [name]: value,
         });
     };
 
-    const handleInputChangeUpload = (event) => {
-        const { name, value, files } = event.target;
-
-        if (name === 'image') {
-            // Handle image file upload
-            if (files && files[0]) {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    setVideoDetails({
-                        ...videoDetails,
-                        [name]: e.target.result,
-                    });
-                };
-                reader.readAsDataURL(files[0]);
-            }
-        } else if (name === 'videoFile') {
-            // Handle video file upload
-            setVideoDetails({
-                ...videoDetails,
-                [name]: files[0],
-            });
-        } else {
-            // Handle other input changes
-            setVideoDetails({
-                ...videoDetails,
-                [name]: value,
-            });
-        }
-    };
-
-    const handleUploadSubmit = (event) => {
+    const handleUploadSubmit = async (event) => {
         event.preventDefault();
-        // Lógica para subir el video con los detalles ingresados
-        // ...
+
+        try {
+            // Llamada a la función agregarEvento con los datos del formulario
+            const response = await agregarEvento(formData);
+
+            if (response.id_evento) {
+                const updatedEventos = [...eventos, { ...formData, id_evento: response.id_evento }];
+                setEventos(updatedEventos);
+                console.log('Eventos actualizados con éxito:', updatedEventos);
+            } else {
+                console.error('Error al agregar el evento:', response.error);
+            }
+        } catch (error) {
+            console.error('Error en la solicitud POST:', error);
+        }
+
         closeUploadModal(); // Cierra la ventana modal después de subir el video
     };
     const handleDeleteSubmit = async (event) => {
-        //event.preventDefault();
+        event.preventDefault();
 
         try {
+            if (!selectedEvento) {
+                console.error('No se ha seleccionado ningún evento para eliminar.');
+                return;
+            }
+
             // Realizar la solicitud DELETE al backend para eliminar el evento
             const response = await fetch(`http://localhost/Backend_web_/borrarEvento.php?id_evento=${selectedEvento.id_evento}`, {
                 method: 'DELETE',
@@ -160,17 +162,18 @@ const Studio = () => {
             if (response.ok) {
                 console.log('Evento eliminado con éxito.');
                 // Actualizar la lista de eventos después de la eliminación
-                const updatedEventos = eventos.filter((evento) => evento.id_evento !== selectedEvento.id_evento);
+                const updatedEventos = eventos.filter((e) => e.id_evento !== selectedEvento.id_evento);
                 setEventos(updatedEventos);
             } else {
                 console.error('Error al eliminar el evento. Código de estado:', response.status);
-
             }
         } catch (error) {
             console.error('Error al realizar la solicitud DELETE:', error);
         }
+
         closeDeleteModal(); // Cierra el modal después de eliminar el evento
     };
+
     return (
         <>
             <div className="container-fluid">
@@ -194,31 +197,31 @@ const Studio = () => {
 
                             <li className="nav-item">
                                 <a className="nav-link linkStudio text-white d-flex align-items-center" href="#">
-                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><SlActionRedo /></div>
+                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><BiCaretRightSquare /></div>
                                     <span className="iconStudio">Mis directos</span>
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link linkStudio text-white d-flex align-items-center" href="#">
-                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><ImFeed /></div>
+                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><IoMdCash /></div>
                                     <span className="iconStudio">Monetización</span>
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link linkStudio text-white d-flex align-items-center" href="#">
-                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><BiCaretRightSquare /></div>
+                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><BsKanban /></div>
                                     <span className="iconStudio">Panel de análisis</span>
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link linkStudio text-white d-flex align-items-center" href="#">
-                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><BiBookmark /></div>
+                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><FaUserPlus /></div>
                                     <span className="iconStudio">Suscriptores</span>
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link linkStudio text-white d-flex align-items-center" href="#">
-                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><BsKanban /></div>
+                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><IoIosVideocam /></div>
                                     <span className="iconStudio">Transmitir en vivo</span>
                                 </a>
                             </li>
@@ -241,7 +244,7 @@ const Studio = () => {
                                             <Form.Control
                                                 type="text"
                                                 name="nombre_evento"
-                                                value={videoDetails.nombre_evento}
+                                                value={formData.nombre_evento}
                                                 onChange={handleInputChange}
                                             />
                                         </Form.Group>
@@ -249,8 +252,8 @@ const Studio = () => {
                                             <Form.Label className='mt-3 mb-1 px-1'>Tipo de evento</Form.Label>
                                             <Form.Control
                                                 type="text"
-                                                name="tipo_evento"
-                                                value={videoDetails.tipo_evento}
+                                                name="tipo_deporte"
+                                                value={formData.tipo_deporte}
                                                 onChange={handleInputChange}
                                             />
                                         </Form.Group>
@@ -259,7 +262,7 @@ const Studio = () => {
                                             <Form.Control
                                                 type="text"
                                                 name="lugar_evento"
-                                                value={videoDetails.lugar_evento}
+                                                value={formData.lugar_evento}
                                                 onChange={handleInputChange}
                                             />
                                         </Form.Group>
@@ -268,7 +271,7 @@ const Studio = () => {
                                             <Form.Control
                                                 type="date"
                                                 name="fecha_evento"
-                                                value={videoDetails.fecha_evento}
+                                                value={formData.fecha_evento}
                                                 onChange={handleInputChange}
                                             />
                                         </Form.Group>
@@ -276,8 +279,8 @@ const Studio = () => {
                                             <Form.Label className='mt-3 mb-1 px-1'> URL de imagen de evento</Form.Label>
                                             <Form.Control
                                                 type="text"
-                                                name="imagen_evento"
-                                                value={videoDetails.imagen_evento}
+                                                name="img_evento"
+                                                value={formData.img_evento}
                                                 onChange={handleInputChange}
                                             />
                                         </Form.Group>
@@ -286,7 +289,7 @@ const Studio = () => {
                                             <Form.Control
                                                 type="text"
                                                 name="horario_evento"
-                                                value={videoDetails.horario_evento}
+                                                value={formData.horario_evento}
                                                 onChange={handleInputChange}
                                             />
                                         </Form.Group>
@@ -295,12 +298,12 @@ const Studio = () => {
                                             <Form.Control
                                                 type="text"
                                                 name="url_transmision"
-                                                value={videoDetails.url_transmision}
+                                                value={formData.url_transmision}
                                                 onChange={handleInputChange}
                                             />
                                         </Form.Group>
 
-                                        <Button variant="primary" type="submit" className='mt-3 py-2'>
+                                        <Button variant="primary" type="submit" className='mt-3 py-2' onClick={handleUploadSubmit}>
                                             Subir video
                                         </Button>
                                         <Button variant="secondary" onClick={closeUploadModal} className='mt-3 mx-3 py-2'>

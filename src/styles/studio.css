@@ -1,29 +1,29 @@
-.fondoEstudio{
+.fondoEstudio {
     background-color: #3f3652;
     border-radius: 20px;
     margin-top: 10%;
 }
 
-.sideBarAdmin{
+.sideBarAdmin {
     background-color: #ff7551;
     border-radius: 20px 0 0 20px;
 }
 
-.textoPanel{
+.textoPanel {
     color: white;
     padding-top: 2%;
     padding-left: 2%;
 }
 
-.cardContenedor{
+.cardContenedor {
     background-color: white;
 }
 
-.overlayAdmin{
+.overlayAdmin {
     position: relative;
 }
 
-.iconEliminar{
+.iconEliminar {
     position: absolute;
     top: 0;
     left: 80%;
@@ -31,7 +31,7 @@
     color: white;
 }
 
-.iconEditar{
+.iconEditar {
     position: absolute;
     top: 3%;
     left: 5%;
@@ -43,7 +43,7 @@
     border-radius: 10px;
 }
 
-.tituloPublica{
+.tituloPublica {
     font-size: 12px;
 }
 
@@ -56,31 +56,31 @@
     border-radius: 50%;
     overflow: hidden;
     margin: 10% auto 0;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .avatarStudio {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .usuarioStudio {
-  color: white;
-  font-weight: bold;
-  font-size: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
 }
 
 .contenedorAvatar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
 
-.contenedorIconStudio{
+.contenedorIconStudio {
     background-color: #3f3652;
     border-radius: 20px;
     width: 50px;
@@ -88,19 +88,35 @@
     font-size: 25px;
 }
 
-.iconStudio{
+.iconStudio {
     font-size: 15px;
     vertical-align: middle;
     font-size: 15px;
 }
 
-.navStudio{
+.navStudio {
     margin-left: -10px;
     margin-bottom: 20px;
-    list-style-type: none; /* Elimina los puntos de la lista */
+    list-style-type: none;
+    /* Elimina los puntos de la lista */
     padding-left: 0;
 }
 
-.linkStudio{
+.linkStudio {
     margin: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 576px) {
+    .fondoEstudio {
+        margin-top: 120px;
+    }
+
+    .sideBarAdmin {
+        border-radius: 20px;
+    }
+
+    .textoPanel {
+        margin-top: 20px;
+    }
 }

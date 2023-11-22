@@ -54,7 +54,7 @@ const Login = ({ onLogin }) => {
     const containerHeight = container.clientHeight;
     const dvdWidth = dvd.clientWidth;
     const dvdHeight = dvd.clientHeight;
-  
+
     function animate() {
       if (y + dvdHeight >= containerHeight || y < 0) {
         dirY *= -1;
@@ -75,50 +75,50 @@ const Login = ({ onLogin }) => {
       dvd.style.top = y + "px";
       window.requestAnimationFrame(animate);
     }
-  
+
     window.requestAnimationFrame(animate);
   }, []);
 
   return (
     <div className='row fila'>
-        <div className='col-md-6 containerImagen'>
-          <div id="dvd"></div>
-          <div className='position-relative'>
-            <div className='textoPrimero'>Tu comunidad, tus campeones, tu streaming:</div>
-            <div className='textoSegundo'>¡Vive el deporte local en cada pantalla!</div>
-          </div>
+      <div className='col-md-6 containerImagen'>
+        <div id="dvd"></div>
+        <div className='text-container'>
+          <div className='textoPrimero'>Tu comunidad, tus campeones, tu streaming:</div>
+          <div className='textoSegundo'>¡Vive el deporte local en cada pantalla!</div>
         </div>
+      </div>
 
-        <div className='col-md-6 containerFormulario'>
-            <form onSubmit={handleLogin} className="formContainer">
-                <div className="d-flex justify-content-center mb-4">
-                  <img className="logoLogin" alt="Logo" src={logo} />
-                </div>
-                <h1 className="mb-3 text-white text-center">Iniciar Sesión</h1>
-                <div className="mb-3 linea">
-                  <label className="form-label text-white">Nombre de usuario</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    value={usuario}
-                    onChange={(e) => setUsuario(e.target.value)}
-                  />
-                </div>
-                <div className="mb-3 linea">
-                  <label className="form-label text-white">Contraseña</label>
-                  <input
-                    type="password"
-                    className="form-control"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
-                <button className="btn btn-primary w-100 mt-3 botonEnviar" type="submit">
-                  Iniciar Sesión
-                </button>
-                {errorMessage && <div className="text-danger mt-3">{errorMessage}</div>}
-            </form>
-        </div>
+      <div className='col-md-6 containerFormulario'>
+        <form onSubmit={handleLogin} className="formContainer">
+          <div className="d-flex justify-content-center mb-4">
+            <img className="logoLogin" alt="Logo" src={logo} />
+          </div>
+          <h1 className="mb-3 text-white text-center">Iniciar Sesión</h1>
+          <div className="mb-3 linea">
+            <label className="form-label text-white">Nombre de usuario</label>
+            <input
+              type="text"
+              className="form-control"
+              value={usuario}
+              onChange={(e) => setUsuario(e.target.value)}
+            />
+          </div>
+          <div className="mb-3 linea">
+            <label className="form-label text-white">Contraseña</label>
+            <input
+              type="password"
+              className="form-control"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button className="btn btn-primary w-100 mt-3 botonEnviar" type="submit">
+            Iniciar Sesión
+          </button>
+          {errorMessage && <div className="text-danger mt-3">{errorMessage}</div>}
+        </form>
+      </div>
     </div>
   );
 };

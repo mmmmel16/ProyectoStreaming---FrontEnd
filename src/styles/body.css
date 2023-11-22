@@ -130,6 +130,7 @@
 .bodyCard {
     align-items: center;
 }
+
 .styleCard {
     margin-right: -15px;
     display: flex;
@@ -151,40 +152,41 @@
     .textoOverlay4,
     .partido-name,
     .deporte-name {
-        font-size: 0.8em; /* Tamaño de fuente más pequeño para pantallas muy pequeñas */
+        font-size: 0.8em;
+        /* Tamaño de fuente más pequeño para pantallas muy pequeñas */
     }
 
-    .textoOverlay2{
-        top: 50px;
+    .textoOverlay2 {
+        top: 40px;
     }
 
-    .textoOverlay3{
-        top: 70px;
+    .textoOverlay3 {
+        top: 60px;
         left: 110px;
     }
 
-    .textoOverlay4{
-        top: 90px;
+    .textoOverlay4 {
+        top: 80px;
     }
 
     .perfil-container {
-        top: 120px;
+        top: 100px;
         left: 15px;
         width: 40px;
         height: 40px;
     }
 
     .partido-name {
-        top: 120px;
+        top: 105px;
         left: 70px;
     }
 
     .deporte-name {
-        top: 135px;
+        top: 120px;
         left: 70px;
     }
 
-    .media{
+    .media {
         margin-top: 20px;
     }
 }
