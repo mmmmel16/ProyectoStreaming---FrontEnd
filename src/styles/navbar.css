@@ -8,7 +8,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   z-index: 1000;
   padding-right: 50px;
 }
@@ -34,11 +33,6 @@
   color: #ff7551;
 }
 
-/* BUSCADOR */
-.buscador {
-  width: 600px;
-}
-
 /* AVATAR */
 .avatar-container {
   position: relative;
@@ -46,7 +40,6 @@
   height: 40px;
   border-radius: 50%;
   overflow: hidden;
-  margin-right: 10px;
 }
 
 .avatar {
@@ -60,24 +53,19 @@
   font-weight: bold;
 }
 
-/* Dropdown Icon */
+/* DROPDOWN */
 .dropdown-icon {
   color: white;
-  /* Cambia el color del icono según tus preferencias */
 }
 
-/* Dropdown Menu and Items */
 .dropdown-menu {
   background-color: #252836;
-  /* Color de fondo del menú dropdown */
 }
 
 .dropdown-item {
   color: white;
-  /* Color de texto de las opciones del menú dropdown */
 }
 
 .dropdown-item:hover {
   background-color: #82859a;
-  /* Cambia el color al pasar el ratón por encima */
 }

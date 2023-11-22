@@ -1,5 +1,4 @@
 import { Card, Button, Modal, Form } from 'react-bootstrap';
-import imgCard from '../img/pelota.jpeg';
 import imgCamara from '../img/camara.png'
 import '../styles/studio.css';
 import { MdDelete } from 'react-icons/md';
@@ -9,10 +8,10 @@ import { FaChartBar, FaPencilAlt } from 'react-icons/fa';
 import Footer from './footer';
 import { SlActionRedo } from 'react-icons/sl';
 import { ImFeed } from "react-icons/im";
-import { BiCaretRightSquare } from "react-icons/bi";
+import { BiCaretRightSquare, BiBookmark } from "react-icons/bi";
 import imgAvatar from '../img/avatar1.jpg';
-import { BiBookmark } from "react-icons/bi";
 import { BsKanban } from "react-icons/bs";
+import { AiOutlineUpload } from 'react-icons/ai';
 
 const Studio = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -180,8 +179,9 @@ const Studio = () => {
                 </div>
 
                 <div className='row fondoEstudio'>
+                    {/* SIDEBAR ADMIN*/}
                     <div className='col-md-2 sideBarAdmin'>
-                        <div className='contenedorAvatar'>
+                        <div className='contenedorAvatar text-center'>
                             <div className='containerAvatarStudio'>
                                 <div>
                                     <img src={imgAvatar} alt="Profile Avatar" className="avatarStudio" />
@@ -190,35 +190,35 @@ const Studio = () => {
                             </div>
                             <span className="usuarioStudio">Javier</span>
                         </div>
-                        <ul className="navStudio flex-column align-items-start">
+                        <ul className="navStudio flex-column align-items-center">
 
                             <li className="nav-item">
-                                <a className="nav-link linkStudio text-white" href="#">
-                                    <div className="contenedorIconStudio"><SlActionRedo /></div>
+                                <a className="nav-link linkStudio text-white d-flex align-items-center" href="#">
+                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><SlActionRedo /></div>
                                     <span className="iconStudio">Mis directos</span>
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link linkStudio text-white" href="#">
-                                    <div className="contenedorIconStudio"><ImFeed /></div>
+                                <a className="nav-link linkStudio text-white d-flex align-items-center" href="#">
+                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><ImFeed /></div>
                                     <span className="iconStudio">Monetización</span>
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link linkStudio text-white" href="#">
-                                    <div className="contenedorIconStudio"><BiCaretRightSquare /></div>
+                                <a className="nav-link linkStudio text-white d-flex align-items-center" href="#">
+                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><BiCaretRightSquare /></div>
                                     <span className="iconStudio">Panel de análisis</span>
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link linkStudio text-white" href="#">
-                                    <div className="contenedorIconStudio"><BiBookmark /></div>
+                                <a className="nav-link linkStudio text-white d-flex align-items-center" href="#">
+                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><BiBookmark /></div>
                                     <span className="iconStudio">Suscriptores</span>
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link linkStudio text-white" href="#">
-                                    <div className="contenedorIconStudio"><BsKanban /></div>
+                                <a className="nav-link linkStudio text-white d-flex align-items-center" href="#">
+                                    <div className="contenedorIconStudio d-flex align-items-center justify-content-center me-2"><BsKanban /></div>
                                     <span className="iconStudio">Transmitir en vivo</span>
                                 </a>
                             </li>
@@ -230,52 +230,76 @@ const Studio = () => {
                         <div className="row d-flex flex-wrap">
 
                             {/* MODAL SUBIR VIDEO */}
-                            <Modal show={showUploadModal} onHide={closeDeleteModal}>
+                            <Modal show={showUploadModal} onHide={closeUploadModal}>
                                 <Modal.Header closeButton>
-                                    <Modal.Title>Subir video</Modal.Title>
+                                    <Modal.Title><AiOutlineUpload className="me-2" />Subir video</Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
                                     <Form onSubmit={handleUploadSubmit}>
                                         <Form.Group controlId="formName">
-                                            <Form.Label className='mb-1 px-1'>Nombre</Form.Label>
+                                            <Form.Label className='mb-1 px-1'>Nombre de evento</Form.Label>
                                             <Form.Control
                                                 type="text"
-                                                name="name"
-                                                value={videoDetails.name}
+                                                name="nombre_evento"
+                                                value={videoDetails.nombre_evento}
                                                 onChange={handleInputChange}
                                             />
                                         </Form.Group>
-                                        <Form.Group controlId="formDescription">
-                                            <Form.Label className='mt-3 mb-1 px-1'>Descripción</Form.Label>
+                                        <Form.Group controlId="formType">
+                                            <Form.Label className='mt-3 mb-1 px-1'>Tipo de evento</Form.Label>
                                             <Form.Control
-                                                as="textarea"
-                                                rows={3}
-                                                name="description"
-                                                value={videoDetails.description}
+                                                type="text"
+                                                name="tipo_evento"
+                                                value={videoDetails.tipo_evento}
+                                                onChange={handleInputChange}
+                                            />
+                                        </Form.Group>
+                                        <Form.Group controlId="formLocation">
+                                            <Form.Label className='mt-3 mb-1 px-1'>Lugar del evento</Form.Label>
+                                            <Form.Control
+                                                type="text"
+                                                name="lugar_evento"
+                                                value={videoDetails.lugar_evento}
+                                                onChange={handleInputChange}
+                                            />
+                                        </Form.Group>
+                                        <Form.Group controlId="formDate">
+                                            <Form.Label className='mt-3 mb-1 px-1'>Fecha del evento</Form.Label>
+                                            <Form.Control
+                                                type="date"
+                                                name="fecha_evento"
+                                                value={videoDetails.fecha_evento}
                                                 onChange={handleInputChange}
                                             />
                                         </Form.Group>
                                         <Form.Group controlId="formImage">
-                                            <Form.Label className='mt-3 mb-1 px-1'>Imagen de portada</Form.Label>
+                                            <Form.Label className='mt-3 mb-1 px-1'> URL de imagen de evento</Form.Label>
                                             <Form.Control
-                                                type="file"
-                                                accept="image/*"
-                                                name="image"
-                                                onChange={handleInputChange}
-                                            />
-                                            {videoDetails.image && (
-                                                <img src={videoDetails.image} alt="Preview" />
-                                            )}
-                                        </Form.Group>
-                                        <Form.Group controlId="formVideoFile">
-                                            <Form.Label className='mt-3 px-1 mb-1'>Archivo de video</Form.Label>
-                                            <Form.Control
-                                                type="file"
-                                                accept="video/*"
-                                                name="videoFile"
+                                                type="text"
+                                                name="imagen_evento"
+                                                value={videoDetails.imagen_evento}
                                                 onChange={handleInputChange}
                                             />
                                         </Form.Group>
+                                        <Form.Group controlId="formTime">
+                                            <Form.Label className='mt-3 mb-1 px-1'>Horario del evento</Form.Label>
+                                            <Form.Control
+                                                type="text"
+                                                name="horario_evento"
+                                                value={videoDetails.horario_evento}
+                                                onChange={handleInputChange}
+                                            />
+                                        </Form.Group>
+                                        <Form.Group controlId="formStreamingURL">
+                                            <Form.Label className='mt-3 mb-1 px-1'>URL de transmisión</Form.Label>
+                                            <Form.Control
+                                                type="text"
+                                                name="url_transmision"
+                                                value={videoDetails.url_transmision}
+                                                onChange={handleInputChange}
+                                            />
+                                        </Form.Group>
+
                                         <Button variant="primary" type="submit" className='mt-3 py-2'>
                                             Subir video
                                         </Button>
@@ -295,7 +319,7 @@ const Studio = () => {
                                         </div>
                                         <div className='d-flex'>
                                             <Card.Title className='text-center tituloPublica pt-1 px-2'>Sube y publica un video para comenzar.</Card.Title>
-                                            <Button className='px-3 py-1' variant="primary" href='#' onClick={openUploadModal}>
+                                            <Button className='ml-auto' variant="primary" href='#' onClick={openUploadModal}>
                                                 Subir video
                                             </Button>
                                         </div>
@@ -328,30 +352,65 @@ const Studio = () => {
                                 <Modal.Body>
                                     <Form onSubmit={handleEditSubmit}>
                                         <Form.Group controlId="formName">
-                                            <Form.Label className='mx-1 mb-1'>Nombre</Form.Label>
+                                            <Form.Label className='mx-1 mb-1'>Nombre del evento</Form.Label>
                                             <Form.Control
                                                 type="text"
-                                                name="name"
-                                                value={editedValues.name}
+                                                name="nombre_evento"
+                                                value={editedValues.nombre_evento}
                                                 onChange={handleInputChange}
                                             />
                                         </Form.Group>
-                                        <Form.Group controlId="formDescription" className='mt-3'>
-                                            <Form.Label className='mx-1 mb-1'>Descripción</Form.Label>
+                                        <Form.Group controlId="formType" className='mt-3'>
+                                            <Form.Label className='mx-1 mb-1'>Tipo de evento</Form.Label>
                                             <Form.Control
-                                                as="textarea"
-                                                rows={3}
-                                                name="description"
-                                                value={editedValues.description}
+                                                type="text"
+                                                name="tipo_evento"
+                                                value={editedValues.tipo_evento}
                                                 onChange={handleInputChange}
                                             />
                                         </Form.Group>
-                                        <Form.Group controlId="formImageUrl" className='mt-3'>
-                                            <Form.Label className='mx-1 mb-1'>URL de la imagen</Form.Label>
+                                        <Form.Group controlId="formLocation" className='mt-3'>
+                                            <Form.Label className='mx-1 mb-1'>Lugar del evento</Form.Label>
                                             <Form.Control
                                                 type="text"
-                                                name="imageUrl"
-                                                value={editedValues.imageUrl}
+                                                name="lugar_evento"
+                                                value={editedValues.lugar_evento}
+                                                onChange={handleInputChange}
+                                            />
+                                        </Form.Group>
+                                        <Form.Group controlId="formDate" className='mt-3'>
+                                            <Form.Label className='mx-1 mb-1'>Fecha del evento</Form.Label>
+                                            <Form.Control
+                                                type="date"
+                                                name="fecha_evento"
+                                                value={editedValues.fecha_evento}
+                                                onChange={handleInputChange}
+                                            />
+                                        </Form.Group>
+                                        <Form.Group controlId="formImage" className='mt-3'>
+                                            <Form.Label className='mx-1 mb-1'>URL de imagen de evento</Form.Label>
+                                            <Form.Control
+                                                type="text"
+                                                name="imagen_evento"
+                                                value={editedValues.imagen_evento}
+                                                onChange={handleInputChange}
+                                            />
+                                        </Form.Group>
+                                        <Form.Group controlId="formTime" className='mt-3'>
+                                            <Form.Label className='mx-1 mb-1'>Horario del evento</Form.Label>
+                                            <Form.Control
+                                                type="text"
+                                                name="horario_evento"
+                                                value={editedValues.horario_evento}
+                                                onChange={handleInputChange}
+                                            />
+                                        </Form.Group>
+                                        <Form.Group controlId="formStreamingURL" className='mt-3'>
+                                            <Form.Label className='mx-1 mb-1'>URL de transmisión</Form.Label>
+                                            <Form.Control
+                                                type="text"
+                                                name="url_transmision"
+                                                value={editedValues.url_transmision}
                                                 onChange={handleInputChange}
                                             />
                                         </Form.Group>
@@ -370,7 +429,6 @@ const Studio = () => {
                                     onMouseEnter={() => handleCardHover(index)}
                                     onMouseLeave={handleCardLeave}>
                                     <Card>
-
                                         <Card.Img variant="top" src={evento.img_evento || 'ruta_de_imagen_predeterminada.jpg'} />
                                         <a href="#" onClick={openDeleteModal}>
                                             <div className='iconEliminar'><MdDelete /></div>
@@ -379,7 +437,7 @@ const Studio = () => {
                                             <div className='iconEditar'><FaPencilAlt /></div>
                                         </a>
                                         <Card.Body>
-                                            <Card.Title>{evento.nombre_evento}</Card.Title>
+                                            <Card.Title className='text-center'>{evento.nombre_evento}</Card.Title>
                                             <div className='text-center'>
                                                 <Card.Title>{evento.tipo_deporte}</Card.Title>
                                                 <Card.Subtitle className='pt-2'>{evento.fecha_evento}</Card.Subtitle>

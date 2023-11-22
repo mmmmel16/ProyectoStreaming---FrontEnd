@@ -20,16 +20,9 @@
 .contenedorIcon {
   background-color: #ff7551;
   border-radius: 20px;
-  padding-top: 1px;
-  padding-left: 12px;
   width: 50px;
   height: 50px;
   font-size: 25px;
-
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 8px;
-
 }
 
 .icon {

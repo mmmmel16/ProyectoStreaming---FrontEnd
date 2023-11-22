@@ -52,7 +52,7 @@ const Body = ({ searchTerm }) => {
             {/*PARTE PRINCIPAL*/}
             <div className="row">
                 <h1 className='subtitulo'>Próximos</h1>
-                <div className="col-sm-6">
+                <div className="col-md-6">
                     <div className="position-relative">
                         <img src={img} alt="" className='imagenPrincipal' />
                         <div className='degradado'></div>
@@ -69,8 +69,8 @@ const Body = ({ searchTerm }) => {
                         <span className='deporte-name'> Futbol</span>
                     </div>
                 </div>
-                <div className="col-sm-6">
-                    <div className="position-relative">
+                <div className="col-md-6">
+                    <div className="position-relative media">
                         <img src={img} alt="" className='imagenPrincipal' />
                         <div className='degradado'></div>
                         <div className='degradado'></div>

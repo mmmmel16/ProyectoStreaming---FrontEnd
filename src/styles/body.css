@@ -137,3 +137,54 @@
     justify-content: center;
     text-align: center;
 }
+
+/* RESPONSIVE */
+@media (max-width: 576px) {
+
+    .textoOverlay1 {
+        top: 10px;
+        left: 15px;
+    }
+
+    .textoOverlay2,
+    .textoOverlay3,
+    .textoOverlay4,
+    .partido-name,
+    .deporte-name {
+        font-size: 0.8em; /* Tamaño de fuente más pequeño para pantallas muy pequeñas */
+    }
+
+    .textoOverlay2{
+        top: 50px;
+    }
+
+    .textoOverlay3{
+        top: 70px;
+        left: 110px;
+    }
+
+    .textoOverlay4{
+        top: 90px;
+    }
+
+    .perfil-container {
+        top: 120px;
+        left: 15px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .partido-name {
+        top: 120px;
+        left: 70px;
+    }
+
+    .deporte-name {
+        top: 135px;
+        left: 70px;
+    }
+
+    .media{
+        margin-top: 20px;
+    }
+}

@@ -36,6 +36,21 @@ footer {
     background-color: #3f3652;
 }
 
-.iconVolver{
-    
+/* RESPONSIVE */
+@media (max-width: 576px) {
+    .copyright{
+        font-size: 12px;
+    }
+
+    .social-media{
+        font-size: 15px;
+    }
+
+    .back-to-top button{
+        font-size: 0;
+    }
+
+    .back-to-top .iconVolver{
+        font-size: 20px;
+    }
 }
