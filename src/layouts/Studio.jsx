@@ -14,6 +14,7 @@ import { AiOutlineUpload } from 'react-icons/ai';
 import agregarEvento from './agregarEvento';
 import { FaChartBar, FaPencilAlt, FaUserPlus } from 'react-icons/fa';
 import { IoIosVideocam, IoMdCash } from 'react-icons/io';
+import editarEvento from './editarEvento';
 
 const Studio = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -53,6 +54,7 @@ const Studio = () => {
             setShowModal(false);
         } else {
             setSelectedEvento(evento);
+            openEditModal(evento); // Llama a la función de edición cuando se hace clic en una tarjeta
             setShowModal(true);
         }
     };
@@ -70,9 +72,13 @@ const Studio = () => {
     const [showDeleteModal, setShowDeleteModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);
     const [editedValues, setEditedValues] = useState({
-        name: '',
-        description: '',
-        imageUrl: '',
+        nombre_evento: '',
+        tipo_deporte: '',
+        lugar_evento: '',
+        fecha_evento: '',
+        img_evento: '',
+        horario_evento: '',
+        url_transmision: '',
     });
 
     const openUploadModal = () => {
@@ -93,7 +99,16 @@ const Studio = () => {
         setShowDeleteModal(false);
     };
 
-    const openEditModal = () => {
+    const openEditModal = (evento) => {
+        setEditedValues({
+            nombre_evento: evento.nombre_evento,
+            tipo_deporte: evento.tipo_deporte,
+            lugar_evento: evento.lugar_evento,
+            fecha_evento: evento.fecha_evento,
+            img_evento: evento.img_evento,
+            horario_evento: evento.horario_evento,
+            url_transmision: evento.url_transmision,
+        });
         setShowEditModal(true);
     };
 
@@ -101,11 +116,33 @@ const Studio = () => {
         setShowEditModal(false);
     };
 
-    const handleEditSubmit = (event) => {
+    const handleEditSubmit = async (event) => {
         event.preventDefault();
+
+        try {
+            // Llamada a la función para editar evento con los datos del formulario
+            const response = await editarEvento({
+                ...editedValues,
+                id_evento: selectedEvento.id_evento,
+            });
+
+            if (response.message === 'Evento editado exitosamente') {
+                // Actualizar la lista de eventos después de la edición
+                const updatedEventos = eventos.map((e) =>
+                    e.id_evento === selectedEvento.id_evento ? editedValues : e
+                );
+                setEventos(updatedEventos);
+                console.log('Eventos actualizados con éxito:', updatedEventos);
+            } else {
+                console.error('Error al editar el evento:', response.message);
+            }
+        } catch (error) {
+            console.error('Error en la solicitud de edición:', error);
+        }
 
         closeEditModal(); // Cierra el modal después de guardar los cambios
     };
+
 
     const [formData, setFormData] = useState({
         nombre_evento: '',
@@ -172,6 +209,10 @@ const Studio = () => {
         }
 
         closeDeleteModal(); // Cierra el modal después de eliminar el evento
+    };
+    const handleEditClick = (evento) => {
+        setSelectedEvento(evento);
+        openEditModal(evento);
     };
 
     return (
@@ -452,65 +493,65 @@ const Studio = () => {
 
                             {/* Card 2 */}
                             {/*<div className="col-md-3 position-relative">
-                                <Card>
-                                    <Card.Img variant="top" src={imgCard} />
-                                    <a href="#" onClick={openDeleteModal}>
-                                        <div className='iconEliminar'><MdDelete /></div>
-                                    </a>
-                                    <a href="#" onClick={openEditModal}>
-                                        <div className='iconEditar'><FaPencilAlt /></div>
-                                    </a>
+                                    <Card>
+                                        <Card.Img variant="top" src={imgCard} />
+                                        <a href="#" onClick={openDeleteModal}>
+                                            <div className='iconEliminar'><MdDelete /></div>
+                                        </a>
+                                        <a href="#" onClick={openEditModal}>
+                                            <div className='iconEditar'><FaPencilAlt /></div>
+                                        </a>
 
-                                    <Card.Body>
-                                        <div className='text-center'>
-                                            <Card.Title>PARTIDO DE FUTBOL</Card.Title>
-                                            <Card.Subtitle className='pt-2'>Boca VS River</Card.Subtitle>
-                                        </div>
-                                    </Card.Body>
-                                </Card>
-                            </div>/*}
-                            {/* Card 2/ */}
+                                        <Card.Body>
+                                            <div className='text-center'>
+                                                <Card.Title>PARTIDO DE FUTBOL</Card.Title>
+                                                <Card.Subtitle className='pt-2'>Boca VS River</Card.Subtitle>
+                                            </div>
+                                        </Card.Body>
+                                    </Card>
+                                </div>/*}
+                                {/* Card 2/ */}
 
                             {/* Card 3 */}
                             {/*<div className="col-md-3 position-relative">
-                                <Card>
-                                    <Card.Img variant="top" src={imgCard} />
-                                    <a href="#" onClick={openDeleteModal}>
-                                        <div className='iconEliminar'><MdDelete /></div>
-                                    </a>
-                                    <a href="#" onClick={openEditModal}>
-                                        <div className='iconEditar'><FaPencilAlt /></div>
-                                    </a>
+                                    <Card>
+                                        <Card.Img variant="top" src={imgCard} />
+                                        <a href="#" onClick={openDeleteModal}>
+                                            <div className='iconEliminar'><MdDelete /></div>
+                                        </a>
+                                        <a href="#" onClick={openEditModal}>
+                                            <div className='iconEditar'><FaPencilAlt /></div>
+                                        </a>
 
-                                    <Card.Body>
-                                        <div className='text-center'>
-                                            <Card.Title>PARTIDO DE FUTBOL</Card.Title>
-                                            <Card.Subtitle className='pt-2'>Boca VS River</Card.Subtitle>
-                                        </div>
-                                    </Card.Body>
-                                </Card>
-                            </div>*/}
+                                        <Card.Body>
+                                            <div className='text-center'>
+                                                <Card.Title>PARTIDO DE FUTBOL</Card.Title>
+                                                <Card.Subtitle className='pt-2'>Boca VS River</Card.Subtitle>
+                                            </div>
+                                        </Card.Body>
+                                    </Card>
+                                </div>*/}
                             {/* Card 3/ */}
 
                             {/* Card 4 */}
                             {/*<div className="col-md-3 position-relative">
-                                <Card>
-                                    <Card.Img variant="top" src={imgCard} />
-                                    <a href="#" onClick={openDeleteModal}>
-                                        <div className='iconEliminar'><MdDelete /></div>
-                                    </a>
-                                    <a href="#" onClick={openEditModal}>
-                                        <div className='iconEditar'><FaPencilAlt /></div>
-                                    </a>
+                                    <Card>
+                                        <Card.Img variant="top" src={imgCard} />
+                                        <a href="#" onClick={openDeleteModal}>
+                                            <div className='iconEliminar'><MdDelete /></div>
+                                        </a>
+                                        <a href="#" onClick={openEditModal}>
+                                            <div className='iconEditar'><FaPencilAlt /></div>
+                                        </a>
 
-                                    <Card.Body>
-                                        <div className='text-center'>
-                                            <Card.Title>PARTIDO DE FUTBOL</Card.Title>
-                                            <Card.Subtitle className='pt-2'>Boca VS River</Card.Subtitle>
-                                        </div>
-                                    </Card.Body>
-                                </Card>
-                            </div>*/}
+                                        <Card.Body>
+                                            <div className='text-center'>
+                                                <Card.Title>PARTIDO DE FUTBOL</Card.Title>
+                                                <Card.Subtitle className='pt-2'>Boca VS River</Card.Subtitle>
+                                            </div>
+                                        </Card.Body>
+                                    </Card>
+                                </div>*/}
                             {/* Card 4/ */}
 
                         </div>

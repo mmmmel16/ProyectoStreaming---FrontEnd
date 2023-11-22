@@ -126,7 +126,7 @@ const Body = ({ searchTerm }) => {
                         <>
                             {selectedEvento.url_transmision && (
                                 <>
-                                    <YouTube videoId="bHQqvYy5KYo" opts={{ width: '100%', height: 600 }} />
+                                    <YouTube videoId={selectedEvento.url_transmision} opts={{ width: '100%', height: 600 }} />
                                 </>
                             )}
                         </>
