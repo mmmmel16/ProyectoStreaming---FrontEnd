@@ -4,15 +4,12 @@ import '../styles/studio.css';
 import { MdDelete } from 'react-icons/md';
 import React, { useState, useEffect } from 'react';
 import Navbar from './navbar';
+import { FaChartBar, FaPencilAlt, FaUserPlus } from 'react-icons/fa';
 import Footer from './footer';
-import { SlActionRedo } from 'react-icons/sl';
-import { ImFeed } from "react-icons/im";
-import { BiCaretRightSquare, BiBookmark } from "react-icons/bi";
+import { BiCaretRightSquare } from "react-icons/bi";
 import imgAvatar from '../img/avatar1.jpg';
 import { BsKanban } from "react-icons/bs";
 import { AiOutlineUpload } from 'react-icons/ai';
-import agregarEvento from './agregarEvento';
-import { FaChartBar, FaPencilAlt, FaUserPlus } from 'react-icons/fa';
 import { IoIosVideocam, IoMdCash } from 'react-icons/io';
 
 const Studio = () => {

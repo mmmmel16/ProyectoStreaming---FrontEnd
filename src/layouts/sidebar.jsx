@@ -4,7 +4,7 @@ import { ImFeed } from "react-icons/im";
 import { BiCaretRightSquare } from "react-icons/bi";
 import { BiBookmark } from "react-icons/bi";
 import { BsKanban } from "react-icons/bs";
-import { IoMdFootball, IoIosBasketball, IoMdBasketball, IoIosWalk, IoIosTennisball } from 'react-icons/io';
+
 
 const Sidebar = () => {
 

@@ -32,7 +32,7 @@
 }
 
 /* FILA 3*/
-.filaCard {
+.filaCard3 {
     padding: 0 30px;
     margin-top: 20px;
 }
@@ -108,21 +108,4 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-}
-
-/* RESPONSIVE */
-@media (max-width: 576px) {
-    .fondoVivo {
-        margin-top: 125px;
-    }
-
-    .contenedorPrimeraFila {
-        display: flex;
-        margin: 0 50px;
-        margin-top: 30px;
-    }
-
-    .contenedorIconVivo {
-        margin: 0 50px 2px 50px;
-    }
 }

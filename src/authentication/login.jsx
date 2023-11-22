@@ -83,7 +83,7 @@ const Login = ({ onLogin }) => {
     <div className='row fila'>
       <div className='col-md-6 containerImagen'>
         <div id="dvd"></div>
-        <div className='text-container'>
+        <div className='position-relative'>
           <div className='textoPrimero'>Tu comunidad, tus campeones, tu streaming:</div>
           <div className='textoSegundo'>¡Vive el deporte local en cada pantalla!</div>
         </div>
