@@ -16,6 +16,11 @@
 .logo {
   width: 90px;
   height: 90px;
+  transition: transform 1s;
+}
+
+.logo:hover{
+  transform: rotate(360deg);
 }
 
 .tituloPagina {
