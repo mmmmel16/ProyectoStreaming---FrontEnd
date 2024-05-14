@@ -1,8 +1,3 @@
-# React + Vite
+#React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este repositorio contiene la parte FrontEnd de "PicoDeportes", un sitio web desarrollado por un equipo colaborativo. Se llevó a cabo un exhaustivo proceso que incluyó el contexto de uso, análisis de la competencia, especificación de requisitos y diseño en Figma. En esta parte se utilizó React para la construcción de la interfaz de usuario.
