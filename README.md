@@ -1,10 +1,10 @@
 # Página web de streaming sobre deportes - FRONTEND
 
 ### Contenido
-- [Descripción]()
-- [Colaboradores]()
-- [Herramientas utilizadas]()
-- [Imágenes]()
+- [Descripción](https://github.com/mmmmel16/ProyectoStreaming---FrontEnd/tree/main?tab=readme-ov-file#descripci%C3%B3n)
+- [Colaboradores](https://github.com/mmmmel16/ProyectoStreaming---FrontEnd/tree/main?tab=readme-ov-file#colaboradores)
+- [Herramientas utilizadas](https://github.com/mmmmel16/ProyectoStreaming---FrontEnd/tree/main?tab=readme-ov-file#herramientas-utilizadas)
+- [Imágenes](https://github.com/mmmmel16/ProyectoStreaming---FrontEnd/tree/main?tab=readme-ov-file#im%C3%A1genes)
 
 ## Descripción 
 Este repositorio contiene la parte FrontEnd de "PicoDeportes", un sitio web desarrollado por un equipo colaborativo. Se llevó a cabo un exhaustivo proceso que incluyó el contexto de uso, análisis de la competencia, especificación de requisitos y diseño en Figma. Usando de referencia el diseño comenzamos a desarrollar por separado la parte de Frontend y Backend utilizando GitHub para el manejo de versiones del proyecto. 
